@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+    /* INTER */
+    @font-face {
+        font-family: "Inter";
+        src: url('../public/font/Inter/Inter_24pt-Medium.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: "Inter Bold";
+        src: url('../public/font/Inter/Inter_24pt-SemiBold.ttf') format('truetype');
+    }    
+    @font-face {
+        font-family: "Inter Light";
+        src: url('../public/font/Inter/Inter_24pt-Light.ttf') format('truetype');
+    }
+    /* Montserrat */
+    @font-face {
+        font-family: "Montserrat";
+        src: url('../public/font/Montserrat/Montserrat-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: "Montserrat Light";
+        src: url('../public/font/Montserrat/Montserrat-Light.ttf') format('truetype');
+    }
+}
+@layer components{
+    .flex-center{
+        @apply flex items-center justify-center;
+    }
+    .header-top-bg{
+        background-image: url('../public/img/pattern.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        top: 0;
+        
+    }
+    .textarea--valid{
+        @apply outline outline-teal-600
+    }
+    .textarea--invalid{
+        @apply outline outline-red-600
+    }
+
+    .comment-item{
+       @apply flex items-center gap-x-2 bg-slate-100 px-1 sm:px-3 py-0.5 rounded-sm rounded-tr-xl hover:-translate-x-1 transition-all
+    }
+    .vote{
+       @apply flex flex-col items-center justify-center text-gray-500 w-8 text-sm hover:text-gray-700 cursor-pointer
+    }
+    .badge-letter{
+        @apply bg-teal-900 text-white font-Inter-Bold select-none w-12 h-10 sm:w-16 sm:h-14 p-2 flex-center text-xl sm:text-4xl rounded-md
+    }
+    .comment{
+        @apply flex flex-col text-gray-800 w-full 
+    }
+    .comment-title{
+        @apply  text-base sm:text-lg font-Inter text-zinc-500 
+    }
+    .comment-text{
+        @apply  tracking-tight line-clamp-2  text-xs sm:text-sm w-[97%] pl-1 select-none
+    }
+    .date{
+        @apply flex-center sm:w-14 w-8 ml-auto text-gray-500 sm:text-sm text-xs select-none
+    }
+}
