@@ -1,6 +1,6 @@
 import { useState,useRef,useEffect } from "react";
 import { useAddCommentMutation } from "../features/apiSlice";
-
+import { toast } from "react-toastify";
 const Header = ()=>{
     const [badgeLetter,setBadgeLetter] = useState('');
     const [company,setCompany] = useState('');
@@ -16,11 +16,11 @@ const Header = ()=>{
     setText(inputText);
     remainCharRef.current = 150 - inputText.length;
     
-    // به روزرسانی DOM مستقیماً بدون رندر مجدد
+    
     if (counterElement.current) {
       counterElement.current.textContent = remainCharRef.current;
       
-      // تغییر رنگ اگر کاراکترهای باقیمانده کم باشد
+    
       if (remainCharRef.current < 20) {
         counterElement.current.classList.add('text-rose-400');
       } else {
@@ -48,11 +48,23 @@ const handleClickSubmit = async () => {
       setBadgeLetter('');
       setText('')
       counterElement.current.textContent = 150;
+      toast.success('Comment added!',{theme:'dark'});
     } catch (err) {
       console.error("Submit failed:", err);
+       setCompany('');
+      setBadgeLetter('');
+      setText('')
+      counterElement.current.textContent = 150;
+       toast.error('Comment added!',{theme:'dark'});
     }
   } else {
-    setText("Err");
+    setText("");
+    if(text.length < 5){
+       toast.warning("Your comment must more than 5 characters",{position:'top-center'})
+    }else{
+       toast.warning("Your comment must have (#)! for Company name",{position:'top-center'})
+    }
+     counterElement.current.textContent = 150;
   }
 };
 

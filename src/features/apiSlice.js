@@ -4,6 +4,7 @@ export const apiSlice = createApi({
    reducerPath:"api",
    baseQuery:fetchBaseQuery({
    baseUrl:"https://bytegrad.com/course-assets/js/1/api",   
+   // for sure to have JSON api response
    prepareHeaders: (headers) => {
     headers.set("Content-Type", "application/json");
     return headers;
