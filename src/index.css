@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer components{
+    body{
+        @apply bg-purple-600
+    }
+    .redd{
+      @apply text-red-600;
+    }
+    .header-top-bg{
+        background-image: url('./assets/img/pattern.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        top: 0;
+        
+    }
+}
+
+@font-face {
+    font-family: Karla;
+    src: url('./assets/font/karla/Karla-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: KarlaLight;
+    src: url('./assets/font/karla/Karla-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: Funnel;
+    src: url('./assets/font/funnel/FunnelDisplay-Regular.ttf')format('truetype');
+}
+@font-face {
+    font-family: FunnelBold;
+    src: url('./assets/font/funnel/FunnelDisplay-SemiBold.ttf')format('truetype');
+}
+
+@theme{
+    --font-Karla:Karla;
+    --font-KarlaLight:KarlaLight;
+    --font-Funnel:Funnel;
+    --font-FunnelBold:FunnelBold;
+}
