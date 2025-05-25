@@ -1,9 +1,7 @@
-import { useState,useRef,useEffect } from "react";
+import { useState,useRef } from "react";
 import { useAddCommentMutation } from "../features/apiSlice";
 import { toast } from "react-toastify";
 const Header = ()=>{
-    const [badgeLetter,setBadgeLetter] = useState('');
-    const [company,setCompany] = useState('');
     const [text,setText] = useState('');
     const [addComment] = useAddCommentMutation();
 
@@ -44,15 +42,11 @@ const handleClickSubmit = async () => {
     // console.log("Sending to API:", payload); 
     try {
       await addComment(payload).unwrap();
-      setCompany('');
-      setBadgeLetter('');
       setText('')
       counterElement.current.textContent = 150;
       toast.success('Comment added!',{theme:'dark'});
     } catch (err) {
       console.error("Submit failed:", err);
-       setCompany('');
-      setBadgeLetter('');
       setText('')
       counterElement.current.textContent = 150;
        toast.error('Comment added!',{theme:'dark'});
@@ -71,7 +65,7 @@ const handleClickSubmit = async () => {
 
 
    return(
-      <header className="sm:mt-12 font-Karla">
+      <header className="sm:mt-8 font-Karla">
      <div className="relative overflow-x-hidden w-[100%] sm:w-[640px] sm:rounded-t-lg bg-zinc-900 text-white pt-12 pb-6 mx-auto flex flex-col items-center justify-center">
        <div className="header-top-bg"></div>
     <h1 className="sm:text-4xl  text-2xl font-Funnel">Give Feedback. <span className="font-Montserrat-Light text-base sm:text-xl">Publicly.</span></h1>

@@ -32,8 +32,30 @@ export const apiSlice = createApi({
             }
          }),
          invalidatesTags:[{type:"Feedback",id:"LIST"}],
-      })
+      }),
+      // deleteComment:builder.mutation({
+      //    query:(id)=>({
+      //       url:`/feedbacks/${id}`,
+      //       method:"DELETE",
+      //    }),
+      //    invalidatesTags:(result,error,arg)=>[{type:"Feedback",id:arg}]
+      // }),
+      // upvoteComment: builder.mutation({
+      //    query:({id,currentUpvote})=>({
+      //       url:`/feedbacks/${id}`,
+      //       method:"PUT",
+      //       body:{
+      //          upvoteCount: currentUpvote+1
+      //       }
+      //    }),
+      //    invalidatesTags:(result,error,arg)=>[{type:'Feedback',id:arg.id}]
+      // })
    })
 })
 
-export const {useGetCommentsQuery,useAddCommentMutation} = apiSlice;
+export const {
+   useGetCommentsQuery,
+   useAddCommentMutation,
+   // useDeleteCommentMutation,
+   // useUpvoteCommentMutation,
+} = apiSlice;
