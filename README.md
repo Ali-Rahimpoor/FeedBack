@@ -1,12 +1,36 @@
-# React + Vite
+# FeedBack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend project built with **React + Vite + TypeScript** for displaying and managing user feedback.
 
-Currently, two official plugins are available:
+[Live Demo](https://ali-rahimpoor.github.io/FeedBack/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- ⚛️ Built with React 19  
+- 🚀 High performance with Vite  
+- 🔧 State management using Redux Toolkit  
+- 🎨 Responsive design using TailwindCSS  
+- 🔔 Notifications via React Toastify & SweetAlert2  
+- ✅ Type-safe development with TypeScript  
+- 🔍 Code linting using ESLint  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+## Screenshots
+
+### 🖼️ Homepage
+
+![Homepage Screenshot Desktop](public/screenshots/desktop.png)
+![Homepage Screenshot Mobile](public/screenshots/mobile.png)
+
+
+## Installation
+
+```bash
+git clone https://github.com/Ali-Rahimpoor/FeedBack.git
+cd FeedBack
+npm install
+
